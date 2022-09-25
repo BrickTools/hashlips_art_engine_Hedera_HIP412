@@ -1,27 +1,15 @@
 const basePath = process.cwd();
 const { MODE } = require(`${basePath}/constants/blend_mode.js`);
-const { NETWORK } = require(`${basePath}/constants/network.js`);
 
-const network = NETWORK.eth;
+// UPDATE YOUR METADATA ! ⚠️⚠️
+const creator= "Project Name";
+const namePrefix = "NFT Name Prefix or Project Name";
+const description = "Your Description";
+const category = "Your category, Artwork, Utility ect..";
 
-// General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+// UPDATE AFTER GENERATE YOUR COLLECTION
 const baseUri = "ipfs://NewUriToReplace";
 
-const solanaMetadata = {
-  symbol: "YC",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
-  creators: [
-    {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
-      share: 100,
-    },
-  ],
-};
-
-// If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
     growEditionSizeTo: 5,
@@ -42,8 +30,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1080,
+  height: 1080,
   smoothing: false,
 };
 
@@ -103,6 +91,8 @@ const preview_gif = {
 module.exports = {
   format,
   baseUri,
+  creator,
+  category,
   description,
   background,
   uniqueDnaTorrance,
@@ -115,8 +105,6 @@ module.exports = {
   pixelFormat,
   text,
   namePrefix,
-  network,
-  solanaMetadata,
   gif,
   preview_gif,
 };
